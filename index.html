@@ -1,0 +1,44 @@
+<!doctype !html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  <div>
+    <select data-bind="value: language, options: languages"></select>
+    <!-- ko if: tags -->
+    <select data-bind="options: tags, optionsValue: 'id', optionsText: 'text', value: tag"></select>
+    <!-- /ko -->
+  </div>
+
+  <!-- ko if: letters -->
+  <div class="letters" data-bind="foreach: letters"><span class="letter" data-bind="text: $data, click: $parent.play"></span><!-- ko if: ($index() + 1) % 6 == 0 --><br><!-- /ko --></div>
+  <!-- /ko -->
+
+  <div data-bind="visible: window_visible">
+    <div class="window_bg" data-bind="click: function() { window_visible(false) }"></div>
+    <div class="window" data-bind="click: play_next">
+        <img class="letter_img">
+        <div class="big_letters">
+          <span class="dropcap" data-bind="text: last_letter"></span><span data-bind="text: last_letters"></span>
+        </div>
+        <audio class="audio_letter"></audio>
+        <audio class="audio_word"></audio>
+        <audio class="audio_sound"></audio>
+    </div>
+  </div>
+
+  <script src="scripts/knockout.js"></script>
+  <script src="scripts/utils.js"></script>
+
+  <script src="scripts/main.js"></script>
+
+  <script src="data/animals.js"></script>
+  <script src="data/household.js"></script>
+  <script src="data/abc.js"></script>
+
+  <script src="data/tags.js"></script>
+  <script src="scripts/run.js"></script>
+</body>
+</html>
