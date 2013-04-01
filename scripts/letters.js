@@ -58,6 +58,8 @@ var LettersViewModel = function(data, lang, tag) {
   self.last_letters = ko.observable();
   self.last_index = ko.observable();
   self.img_el = document.querySelector('.letter_img');
+  self.audio_cache = document.createElement('audio');
+  self.audio_cache.preload = 'auto';
   self.audio = document.createElement('audio');
   self.audio.autoplay = true;
   self.audio_destroy = function() {
@@ -121,6 +123,9 @@ var LettersViewModel = function(data, lang, tag) {
                   return;
                 }
                 audio.src = sound_srcs.shift();
+                if (sound_srcs.length) {
+                  self.audio_cache.src = sound_srcs[0];
+                }
               };
 
           audio.addEventListener('error', next_sound);
