@@ -8,7 +8,7 @@
   <div>
     <select data-bind="value: language, options: languages"></select>
     <!-- ko if: tags -->
-    <select data-bind="options: tags, optionsValue: 'id', optionsText: 'text', value: tag"></select>
+    <select data-bind="options: tags, optionsValue: 'id', optionsText: function(tag) { return LettersData[tag.id] ? '• ' + tag.text + ' •' : tag.text; }, value: tag"></select>
     <!-- /ko -->
   </div>
 
@@ -32,7 +32,7 @@
 
   <script src="scripts/letters.js"></script>
 
-  <script src="data/animals.js"></script>
+  <script src="data/animal.js"></script>
   <script src="data/household.js"></script>
   <script src="data/abc.js"></script>
 

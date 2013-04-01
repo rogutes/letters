@@ -1,5 +1,4 @@
 var LettersTags = {
-  "all": {"en": "All", "lt": "Visi"},
   "animal": {"en": "Animals", "lt": "Gyvūnai"},
   "animal_young": {"en": "Animal young", "lt": "Gyvūnų jaunikliai"},
   "bird": {"en": "Birds", "lt": "Paukščiai"},

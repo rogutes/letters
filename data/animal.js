@@ -1,4 +1,4 @@
-LettersData.animals = {
+LettersData.animal = {
   "horse_white.jpg": {
     // http://commons.wikimedia.org/wiki/File:Mangalarga_Marchador_Conforma%C3%A7%C3%A3o.jpg
     "tags": ["animal", "mammal", "domestic", "lt_animal"],

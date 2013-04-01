@@ -20,7 +20,7 @@ var LettersViewModel = function(data, lang, tag) {
 
   if (self.languages.indexOf(lang) == -1) lang = 'en';
   self.language = ko.observable(lang);
-  self.tag = ko.observable(self.data[self.language()][tag] ? tag : 'all');
+  self.tag = ko.observable(self.data[self.language()][tag] ? tag : 'abc');
 
   self.tags = ko.computed(function() {
     var lang = self.language(),
@@ -34,7 +34,14 @@ var LettersViewModel = function(data, lang, tag) {
       tags.push({'id': tag_id, 'text': tag_text});
     });
     return tags.sort(function(a, b) {
-      if (a.id == 'all') return -1;
+      // move tag up if there is also a collection with the same id
+      if (LettersData[a.id]) {
+        if (LettersData[b.id]) {
+          return a.text.localeCompare(b.text);
+        }
+        return -1;
+      }
+      if (LettersData[b.id]) return 1;
       return a.text.localeCompare(b.text);
     });
   });
