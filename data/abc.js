@@ -4,10 +4,7 @@ LettersData.abc = {
     "languages": [
       {"id": "en", "name": "Apple"},
       {"id": "lt", "name": "Arklys"},
-      {"id": "lt", "name": "Akis"},
-      {"id": "lt", "name": "Apelsinas"},
-      {"id": "lt", "name": "Autobusas"},
-      {"id": "lt", "name": "Arbata"}
+      {"id": "lt", "name": "Apelsinas"}
     ]
   },
   "Ą.png": {
@@ -20,10 +17,8 @@ LettersData.abc = {
     "tags": ["abc"],
     "languages": [
       {"id": "en", "name": "Ball"},
-      {"id": "lt", "name": "Batas"},
       {"id": "lt", "name": "Balandis"},
-      {"id": "lt", "name": "Briedis"},
-      {"id": "lt", "name": "Bala"}
+      {"id": "lt", "name": "Batas"}
     ]
   },
   "C.png": {
@@ -37,7 +32,7 @@ LettersData.abc = {
   "Č.png": {
     "tags": ["abc"],
     "languages": [
-      {"id": "lt", "name": "Čiurlys"},
+      {"id": "lt", "name": "Čia"},
       {"id": "lt", "name": "Čiaupas"}
     ]
   },
@@ -46,9 +41,7 @@ LettersData.abc = {
     "languages": [
       {"id": "en", "name": "Dog"},
       {"id": "lt", "name": "Dramblys"},
-      {"id": "lt", "name": "Drugelis"},
-      {"id": "lt", "name": "Dangus"},
-      {"id": "lt", "name": "Debesis"}
+      {"id": "lt", "name": "Dangus"}
     ]
   },
   "E.png": {
@@ -56,8 +49,6 @@ LettersData.abc = {
     "languages": [
       {"id": "en", "name": "Elephant"},
       {"id": "lt", "name": "Ežys"},
-      {"id": "lt", "name": "Erelis"},
-      {"id": "lt", "name": "Elnias"},
       {"id": "lt", "name": "Eglė"}
     ]
   },
@@ -85,8 +76,8 @@ LettersData.abc = {
     "tags": ["abc"],
     "languages": [
       {"id": "en", "name": "Goat"},
-      {"id": "lt", "name": "Gervė"},
-      {"id": "lt", "name": "Gaidys"}
+      {"id": "lt", "name": "Gaidys"},
+      {"id": "lt", "name": "Gervė"}
     ]
   },
   "H.png": {
@@ -128,9 +119,8 @@ LettersData.abc = {
     "tags": ["abc"],
     "languages": [
       {"id": "en", "name": "King"},
-      {"id": "lt", "name": "Karvė"},
       {"id": "lt", "name": "Katė"},
-      {"id": "lt", "name": "Kiaulė"}
+      {"id": "lt", "name": "Karvė"}
     ]
   },
   "L.png": {
@@ -138,7 +128,6 @@ LettersData.abc = {
     "languages": [
       {"id": "en", "name": "Lion"},
       {"id": "lt", "name": "Lapė"},
-      {"id": "lt", "name": "Liūtas"},
       {"id": "lt", "name": "Lėktuvas"}
     ]
   },
@@ -146,10 +135,8 @@ LettersData.abc = {
     "tags": ["abc"],
     "languages": [
       {"id": "en", "name": "Mango"},
-      {"id": "lt", "name": "Meška"},
       {"id": "lt", "name": "Mama"},
-      {"id": "lt", "name": "Medis"},
-      {"id": "lt", "name": "Mėnulis"}
+      {"id": "lt", "name": "Meška"}
     ]
   },
   "N.png": {
@@ -206,10 +193,8 @@ LettersData.abc = {
     "tags": ["abc"],
     "languages": [
       {"id": "en", "name": "Tomato"},
-      {"id": "lt", "name": "Tetervinas"},
-      {"id": "lt", "name": "Telefonas"},
-      {"id": "lt", "name": "Tarakonas"},
-      {"id": "lt", "name": "Tėtė"}
+      {"id": "lt", "name": "Tėtė"},
+      {"id": "lt", "name": "Telefonas"}
     ]
   },
   "U.png": {
@@ -236,10 +221,8 @@ LettersData.abc = {
     "tags": ["abc"],
     "languages": [
       {"id": "en", "name": "Van"},
-      {"id": "lt", "name": "Vilkas"},
       {"id": "lt", "name": "Varna"},
-      {"id": "lt", "name": "Voverė"},
-      {"id": "lt", "name": "Višta"}
+      {"id": "lt", "name": "Vilkas"}
     ]
   },
   "Z.png": {
@@ -247,8 +230,7 @@ LettersData.abc = {
     "languages": [
       {"id": "en", "name": "Zebra"},
       {"id": "lt", "name": "Zuikis"},
-      {"id": "lt", "name": "Zylė"},
-      {"id": "lt", "name": "Zebras"}
+      {"id": "lt", "name": "Zylė"}
     ]
   },
   "Ž.png": {
