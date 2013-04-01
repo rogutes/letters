@@ -1,4 +1,4 @@
-// transform LettersData to data.lt.animals.A = [{img: 'animals/horse_white.jpg', name: 'Arklys'}]
+// transform LettersData to data.lt.animals.A = [{collection: 'animals', img: 'animals/horse_white.jpg', name: 'Arklys'}]
 var data = {};
 Object.keys(LettersData).forEach(function(collection) {
   Object.keys(LettersData[collection]).forEach(function(img_filename) {
@@ -8,7 +8,11 @@ Object.keys(LettersData).forEach(function(collection) {
       var lang_ref = data[lang_item.id],
           name = lang_item.name,
           letter = lang_item.name[0],
-          item_ref = {img: collection + '/' + img_filename, name: name};
+          item_ref = {collection: collection, img: img_filename, name: name};
+      
+      if (img_desc.sounds) {
+        item_ref.sounds = img_desc.sounds;
+      }
 
       if (!lang_ref.all[letter]) lang_ref.all[letter] = [];
       lang_ref.all[letter].push(item_ref);

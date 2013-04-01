@@ -50,10 +50,22 @@ var LettersViewModel = function(data, lang, tag) {
   self.last_letter = ko.observable();
   self.last_letters = ko.observable();
   self.last_index = ko.observable();
-  self.img_el = document.querySelector('.letter_img'),
-  self.audio_letter = document.querySelector('.audio_letter');
-  self.audio_word = document.querySelector('.audio_sound');
-  self.audio_sound = document.querySelector('.audio_sound');
+  self.img_el = document.querySelector('.letter_img');
+  self.audio = document.createElement('audio');
+  self.audio.autoplay = true;
+  self.audio_destroy = function() {
+    if (!self.audio_destroy.event_callback) return;
+    var audio = self.audio,
+        callback = self.audio_destroy.event_callback;
+    self.audio_destroy.event_callback = null;
+    audio.removeEventListener('error', callback);
+    audio.removeEventListener('ended', callback);
+    audio.src = '';
+  };
+
+  self.window_visible.subscribe(function(visible) {
+    if (!visible) self.audio_destroy();
+  });
 
   self.play = function(letter) {
     var lang = self.language(),
@@ -88,34 +100,45 @@ var LettersViewModel = function(data, lang, tag) {
     }
  
     var img_el = self.img_el,
-        audio_letter = self.audio_letter,
-        audio_word = self.audio_word,
-        audio_sound = self.audio_sound,
+        sound_srcs = [],
         complete = 0,
         total = 4,
         oncomplete = function() {
           self.last_letter(letter);
-          self.last_letters(thing.name.toUpperCase().slice(1));
+          self.last_letters(thing.name.toLocaleUpperCase().slice(1));
           self.window_visible(true);
-          audio_letter.play();
-        },
-        progress = function() {
-          complete++;
-          if (complete == total) oncomplete();
+          var audio = self.audio,
+              next_sound = function() {
+                if (!sound_srcs.length) {
+                  self.audio_destroy(next_sound);
+                  return;
+                }
+                audio.src = sound_srcs.shift();
+              };
+
+          audio.addEventListener('error', next_sound);
+          audio.addEventListener('ended', next_sound);
+          self.audio_destroy.event_callback = next_sound;
+          next_sound();
         };
 
-    img_el.src = audio_letter.src = audio_word.src = audio_sound.src = '';
-    img_el.onload = audio_letter.onload = audio_word.onload = audio_sound.onload = progress;
-    img_el.onerror = audio_letter.onerror = audio_word.onerror = audio_sound.onerror = progress;
-    img_el.oninvalid = audio_letter.oninvalid = audio_word.oninvalid = audio_sound.oninvalid = progress;
+    img_el.src = '';
     img_el.onload = oncomplete;
     
-    img_el.src = 'images/' + thing.img;
-    audio_letter.src = ['sounds', lang, 'letters', letter + '.ogg'].join('/');
-    audio_word.src = ['sounds', lang, 'words', letter + '.ogg'].join('/');
-    audio_sound.src = ['sounds', lang, 'sounds', letter + '.ogg'].join('/');
+    img_el.src = 'images/' + thing.collection + '/' + thing.img;
+    sound_srcs.push(['sounds', 'translations', lang, 'letters', letter + '.ogg'].join('/'));
+    sound_srcs.push(['sounds', 'silence-1s.ogg'].join('/'));
+    sound_srcs.push(['sounds', 'translations', lang, 'words', thing.name.toLocaleLowerCase() + '.ogg'].join('/'));
+    if (thing.sounds) {
+      sound_srcs.push(['sounds', 'silence-1s.ogg'].join('/'));
+      sound_srcs.push(['sounds', 'silence-1s.ogg'].join('/'));
+      thing.sounds.forEach(function(sound_name) {
+        sound_srcs.push(['sounds', thing.collection, sound_name + '.ogg'].join('/'));
+      });
+    }
   };
   self.play_next = function() {
+    self.audio_destroy();
     self.play();
   };
 

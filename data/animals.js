@@ -5,6 +5,9 @@ LettersData.animals = {
     "languages": [
       {"id": "en", "name": "Horse"},
       {"id": "lt", "name": "Arklys"}
+    ],
+    "sounds": [
+      "horse_neighing" // Horse-whinnying_3.wav from http://www.free-sound-fx.net/
     ]
   },
   "beaver.jpg": {
@@ -150,6 +153,9 @@ LettersData.animals = {
     "languages": [
       {"id": "en", "name": "Cat"},
       {"id": "lt", "name": "Katė"}
+    ],
+    "sounds": [
+      "cat_meowing" // Cat_makes_meow_sound_3.wav from http://www.free-sound-fx.net/
     ]
   },
   "pig.jpg": {
@@ -158,6 +164,9 @@ LettersData.animals = {
     "languages": [
       {"id": "en", "name": "Pig"},
       {"id": "lt", "name": "Kiaulė"}
+    ],
+    "sounds": [
+      "pigs_eating" // Pigs_eating_piggy.wav from http://www.free-sound-fx.net/
     ]
   },
   "cow.jpg": {
@@ -166,6 +175,9 @@ LettersData.animals = {
     "languages": [
       {"id": "en", "name": "Cow"},
       {"id": "lt", "name": "Karvė"}
+    ],
+    "sounds": [
+      "cow_mooing" // Cow_moo.wav from http://www.free-sound-fx.net/
     ]
   },
   "fox.jpg": {
@@ -198,6 +210,9 @@ LettersData.animals = {
     "languages": [
       {"id": "en", "name": "Goat"},
       {"id": "lt", "name": "Ožys"}
+    ],
+    "sounds": [
+      "goat_bleating" // Goat_screeming.wav from http://www.free-sound-fx.net/
     ]
   },
   "peacock.jpg": {
@@ -214,6 +229,9 @@ LettersData.animals = {
     "languages": [
       {"id": "en", "name": "Owl"},
       {"id": "lt", "name": "Pelėda"}
+    ],
+    "sounds": [
+      "owl_hooting" // owl_owling.wav from http://www.free-sound-fx.net/
     ]
   },
   "roe_deer.jpg": {
@@ -238,6 +256,9 @@ LettersData.animals = {
     "languages": [
       {"id": "en", "name": "Dog"},
       {"id": "lt", "name": "Šuo"}
+    ],
+    "sounds": [
+      "dog_barking" // Dog_barking_loud.wav from http://www.free-sound-fx.net/
     ]
   },
   "blackgame.jpg": {
@@ -321,6 +342,15 @@ LettersData.animals = {
     ]
   }
 };
+
+// "sheep_baaing" // Sheep_sound_1.wav from http://www.free-sound-fx.net/
+// "lion_roaring" // Lion_Roar_2.wav from http://www.free-sound-fx.net/
+// "rooster_crowing" // Rooster_in_the_morning.wav from http://www.free-sound-fx.net/
+// "hen_laid_egg" // Hen_announcin~n_an_egg.ogg from http://commons.wikimedia.org/wiki/File:Hen_announcing_shes_lain_an_egg.ogg
+// "gorilla_growling" // Gorilla_growl.mp3 from http://www.free-sound-fx.net/
+// "geese_cackling" // Geese_snattering.wav from http://www.free-sound-fx.net/
+// "elephant_trumpeting" // Elephant_trumpeting.mp3 from http://www.free-sound-fx.net/
+// "duck_quacking" // Duck_quacking_sound.wav from http://www.free-sound-fx.net/ 
 
 // Letters.lt_animals_various = {
 //   //"Ą": [""],
