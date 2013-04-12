@@ -76,6 +76,13 @@ var LettersViewModel = function(data, lang, tag) {
     if (!visible) self.audio_destroy();
   });
 
+  self.keyboard_input = function(data, e) {
+    var letter = String.fromCharCode(e.keyCode),
+        lang = self.language(),
+        tag = self.tag();
+    if (!self.data[lang][tag][letter]) return;
+    self.play(letter);
+  };
   self.play = function(letter) {
     var lang = self.language(),
         tag = self.tag(),
